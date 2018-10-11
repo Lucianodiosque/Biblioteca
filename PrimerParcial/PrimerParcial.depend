@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1539267224 source:c:\users\alumno\desktop\primerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Propietarios.h"
+
+1539267122 c:\users\alumno\desktop\primerparcial\propietarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1539267434 source:c:\users\alumno\desktop\primerparcial\propietarios.c
+	"Propietarios.h"
+
+1539269119 source:c:\users\alumno\desktop\primerparcial\automoviles.c
+	"Automoviles.h"
+
+1539269119 c:\users\alumno\desktop\primerparcial\automoviles.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
