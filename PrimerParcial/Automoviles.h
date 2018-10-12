@@ -9,11 +9,18 @@
 #define OTRO
 typedef struct
 {
-   int idPropietario;
+   char idPropietario[50];
    char patente[50];
    char marca[50];
    int estado;
 }eAutomovil;
 
-int initAutomoviles(eAutomovil[],int);
-int addAutomoviles(eAutomovil[],int);
+int init_automoviles(eAutomovil[],int);
+int add_automoviles(eAutomovil[],int);
+void inicializar_automovilesConHardcode(eAutomovil[]);
+void mostrar_automoviles(eAutomovil[],int);
+int validar_NumAutos(char[]);
+int validar_cadenaAutos(char[]);
+int devolverHorasEstadia();
+int buscar_automovilesLibre(eAutomovil[],int);
+void stringToUpper(char caracter[]);

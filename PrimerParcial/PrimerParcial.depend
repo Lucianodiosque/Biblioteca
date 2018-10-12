@@ -24,3 +24,36 @@
 	<string.h>
 	<ctype.h>
 
+1539320207 source:c:\users\lusho\desktop\biblioteca-master\primerparcial\automoviles.c
+	"Automoviles.h"
+
+1539316219 c:\users\lusho\desktop\biblioteca-master\primerparcial\automoviles.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1539319398 source:c:\users\lusho\desktop\biblioteca-master\primerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Propietarios.h"
+	"Automoviles.h"
+
+1539317351 c:\users\lusho\desktop\biblioteca-master\primerparcial\propietarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1539320106 source:c:\users\lusho\desktop\biblioteca-master\primerparcial\propietarios.c
+	"Propietarios.h"
+
+1539308580 c:\users\lusho\desktop\biblioteca-master\primerparcial\bibliotecas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
