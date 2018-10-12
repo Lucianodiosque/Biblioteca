@@ -1,12 +1,5 @@
 #include "Automoviles.h"
 
-#define ALPHA_ROMEO 22
-#define FERRARI 23
-#define AUDI 24
-#define OTRO 25
-#define VACIO 0
-#define OCUPADO 1
-#define ELIMINADO -1
 int init_automoviles(eAutomovil array[],int tam)
 {
     int i;
@@ -23,7 +16,7 @@ int init_automoviles(eAutomovil array[],int tam)
 }
 int add_automoviles(eAutomovil array[],int tam)
 {
-    int i,funcRetorno=-1;
+    int i,funcRetorno=-1,opcion2;
     char opcion='s';
     int validacion;
     if(tam>0)
@@ -49,17 +42,31 @@ int add_automoviles(eAutomovil array[],int tam)
              scanf("%s",&array[i].patente);
              strupr(array[i].patente);
              printf("Ingrese Marca del propietario: \n");
-             scanf("%s",&array[i].marca);
-             validacion=validar_cadena(array[i].marca);
-             strupr(array[i].patente);
-             while(validacion==0)
+             printf("1-ALPHA_ROMEO\n2-FERRARI\n3-AUDI\n4-OTROS\n5-SALIR\n");
+             scanf("%d",&opcion2);
+             do{
+             switch(opcion2)
              {
-                system("cls");
-                printf("Ingrese Marca del propietario: \n");
-                scanf("%s",&array[i].marca);
-                strupr(array[i].patente);
-                validacion=validar_cadena(array[i].marca);
+                case 1:
+                    strcpy(array[i].marca,"ALPHA_ROMEO");
+                    break;
+                case 2:
+                    strcpy(array[i].marca,"FERRARI");
+                    break;
+                case 3:
+                    strcpy(array[i].marca,"AUDI");
+                    validacion=validar_cadena(array[i].marca);
+                    break;
+                case 4:
+                    strcpy(array[i].marca,"OTROS");
+                    break;
+                case 5:
+                    break;
+                default:
+                    printf("Ingreso una opcion incorrecta reingrese");
+                    break;
              }
+             }while(opcion=='5');
              array[i].estado=OCUPADO;
              fflush(stdin);
              printf("Desea ingresar un usuario? (s/n)");
@@ -78,7 +85,7 @@ int add_automoviles(eAutomovil array[],int tam)
 void inicializar_automovilesConHardcode(eAutomovil array[])
 {
     char id[][50]={"1000","1001","1002","1003"};
-    char marca[][50]={"ALPHA_ROMEO","FERRARI","AUDI","OTROS"};
+    char marca[][50]={"ALPHA_ROMEO","FERRARI","AUDI","ALPHA_ROMEO"};
     char patente[][50]={"MTA087","BTA236","PPE876","AUD979"};
 
     int i;
@@ -93,11 +100,12 @@ void inicializar_automovilesConHardcode(eAutomovil array[])
 void mostrar_automoviles(eAutomovil list[] , int len)
 {
     int i;
+    printf("ID PROPIETARIO: ---- MARCA: ----- PATENTE:\n");
     for(i=0;i<len;i++)
     {
         if(list[i].estado==OCUPADO)
         {
-            printf("%s %s %s\n",list[i].idPropietario,list[i].marca,list[i].patente);
+            printf("%s ---- %s ----- %s\n",list[i].idPropietario,list[i].marca,list[i].patente);
         }
 
     }
@@ -136,26 +144,37 @@ int validar_cadenaAutos(char palabra[]) // LO MISMO QUE VALIDAR NUM
     }
     return error;
 }
-int devolverHorasEstadia()
+int buscar_automovilesLibre(eAutomovil array[],int tam)
 {
-    int horas;
-
-    srand(time(NULL));
-
-    horas = (rand()%24)+1;
-
-    return horas ;
-
+    int i,funcRetorno=-1;
+    if(tam>0)
+    {
+        for(i=0;i<tam;i++)
+        {
+            if(array[i].estado==VACIO)
+            {
+                return i;
+                break;
+            }
+        }
+    }
+    return funcRetorno;
 }
-int calcularHorasDeEstadia(eAutomovil array[],int tam)
+
+int calcularHorasDeEstadia(eAutomovil array[],int tam,eHistorialAutos list[],int tamHist)
 {
     int i;
+    int j;
     char opcion2;
     char opcion[50];
     int horas;
-    int dinero;
-    int error=-1;
+    int acumuladorAudi=0;
+    int acumuladorAlpha=0;
+    int acumuladorFerrari=0;
+    int acumuladorOtros=0;
+    int dinero=0;
     char aux[4][50];
+    int*  flag;
     if(tam>0||array!=NULL||buscar_automovilesLibre(array,tam)==-1)
     {
         mostrar_automoviles(array,tam);
@@ -173,8 +192,14 @@ int calcularHorasDeEstadia(eAutomovil array[],int tam)
                case 's':
                     if(strcmp(array[i].marca,"ALPHA_ROMEO")==0)
                     {
+                      //  sumarPocicionesArray(list,tamHist);
                         horas=devolverHorasEstadia();
                         dinero=150*horas;
+                        acumuladorAlpha=dinero+acumuladorAlpha;
+                        list[i].contadorAlpha=acumuladorAlpha;
+                        acumuladorAlpha=list[i].contadorAlpha;
+                        list[i].estado=OCUPADO;
+
                         printf("ID PROPIETARIO: ---- PATENTE: ---- MARCA: ---- VALOR DE LA ESTADIA:\n\n");
                         printf("%s ---- %s ---- %s ---- %d\n",array[i].idPropietario,array[i].patente,array[i].marca,dinero);
 
@@ -183,6 +208,9 @@ int calcularHorasDeEstadia(eAutomovil array[],int tam)
                     {
                         horas=devolverHorasEstadia();
                         dinero=horas*175;
+                        acumuladorFerrari=dinero+acumuladorFerrari;
+                        list[i].contadorFerrari=acumuladorFerrari;
+                           list[i].estado=OCUPADO;
                         printf("ID PROPIETARIO: ---- PATENTE: ---- MARCA: ---- VALOR DE LA ESTADIA:\n\n");
                         printf("%s ---- %s ---- %s ---- %d\n",array[i].idPropietario,array[i].patente,array[i].marca,dinero);
                     }
@@ -190,6 +218,9 @@ int calcularHorasDeEstadia(eAutomovil array[],int tam)
                     {
                         horas=devolverHorasEstadia();
                         dinero=horas*200;
+                        acumuladorAudi=dinero+acumuladorAudi;
+                        list[i].contadorAudi=acumuladorAudi;
+                        list[i].estado=OCUPADO;
                         printf("ID PROPIETARIO: ---- PATENTE: ---- MARCA: ---- VALOR DE LA ESTADIA:\n\n");
                         printf("%s ---- %s ---- %s ---- %d\n",array[i].idPropietario,array[i].patente,array[i].marca,dinero);
                     }
@@ -197,6 +228,9 @@ int calcularHorasDeEstadia(eAutomovil array[],int tam)
                     {
                         horas=devolverHorasEstadia();
                         dinero=horas*250;
+                        acumuladorOtros=acumuladorOtros+dinero;
+                        list[i].contadorOtros=acumuladorOtros;
+                        list[i].estado=OCUPADO;
                         printf("ID PROPIETARIO: ---- PATENTE: ---- MARCA: ---- VALOR DE LA ESTADIA:\n\n");
                         printf("%s ---- %s ---- %s ---- %d\n",array[i].idPropietario,array[i].patente,array[i].marca,dinero);
                     }
@@ -209,27 +243,23 @@ int calcularHorasDeEstadia(eAutomovil array[],int tam)
 
                     }
                 array[i].estado=ELIMINADO;
-                error=0;
+
             }
 
         }
     }
-    return error;
+    return dinero;
 }
-int buscar_automovilesLibre(eAutomovil array[],int tam)
+int devolverHorasEstadia()
 {
-    int i,funcRetorno=-1;
-    if(tam>0)
-    {
-        for(i=0;i<tam;i++)
-        {
-            if(array[i].estado==VACIO)
-            {
-                return i;
-                break;
-            }
-        }
-    }
-    return funcRetorno;
+    int horas;
+
+    srand(time(NULL));
+
+    horas = (rand()%24)+1;
+
+    return horas ;
+
 }
+
 

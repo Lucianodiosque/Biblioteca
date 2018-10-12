@@ -3,10 +3,12 @@
 #include <string.h>
 #include <ctype.h>
 
-#define ALPHA_ROMEO
-#define FERRARI
-#define AUDI
-#define OTRO
+#define VACIO 0
+#define OCUPADO 1
+#define ELIMINADO -1
+
+#include "Historial-Automoviles.h"
+
 typedef struct
 {
    char idPropietario[50];
@@ -21,6 +23,7 @@ void inicializar_automovilesConHardcode(eAutomovil[]);
 void mostrar_automoviles(eAutomovil[],int);
 int validar_NumAutos(char[]);
 int validar_cadenaAutos(char[]);
-int devolverHorasEstadia();
 int buscar_automovilesLibre(eAutomovil[],int);
-void stringToUpper(char caracter[]);
+
+int devolverHorasEstadia();
+int calcularHorasDeEstadia(eAutomovil [],int,eHistorialAutos[],int );

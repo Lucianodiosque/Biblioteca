@@ -57,3 +57,47 @@
 	<string.h>
 	<ctype.h>
 
+1539353585 source:c:\users\alumno\downloads\biblioteca-master\primerparcial\automoviles.c
+	"Automoviles.h"
+
+1539349388 c:\users\alumno\downloads\biblioteca-master\primerparcial\automoviles.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Historial-Automoviles.h"
+
+1539353739 source:c:\users\alumno\downloads\biblioteca-master\primerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Propietarios.h"
+	"Automoviles.h"
+
+1539320626 c:\users\alumno\downloads\biblioteca-master\primerparcial\propietarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1539320626 source:c:\users\alumno\downloads\biblioteca-master\primerparcial\propietarios.c
+	"Propietarios.h"
+
+1539351525 source:c:\users\alumno\downloads\biblioteca-master\primerparcial\historial-automoviles.c
+	"Historial-Automoviles.h"
+
+1539349343 c:\users\alumno\downloads\biblioteca-master\primerparcial\historial-automoviles.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1539353834 source:c:\users\alumno\downloads\biblioteca-master\primerparcial\automoviles-propietarios.c
+	"Automoviles-Propietarios.h"
+
+1539353739 c:\users\alumno\downloads\biblioteca-master\primerparcial\automoviles-propietarios.h
+	"Propietarios.h"
+	"Automoviles.h"
+

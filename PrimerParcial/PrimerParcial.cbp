@@ -31,10 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Automoviles-Propietarios.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Automoviles-Propietarios.h" />
 		<Unit filename="Automoviles.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Automoviles.h" />
+		<Unit filename="Historial-Automoviles.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Historial-Automoviles.h" />
 		<Unit filename="Propietarios.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -15,6 +15,7 @@ int main()
 {
     ePropietario propietarios[AUTOS];
     eAutomovil automoviles[AUTOS];
+    eHistorialAutos historial[AUTOS];
     int opcion;
     int error;
     int error1;
@@ -23,6 +24,8 @@ int main()
     int error4;
     int error5;
     int error6;
+    int acumuladorDinero=0;
+    int recaudacionContador;
     int errorInitAutos;
     char optionId[50];
     error =init_Propietarios(propietarios,AUTOS);
@@ -35,7 +38,7 @@ int main()
         {
             printf("BIENVENIDO A ESTACIONAMIENTO DE VEHICULOS\n\n");
             printf("INGRESE UNA OPCION: \n");
-            printf("1-ALTA\n2-MODIFICAR\n3-BAJA\n4-LISTAR\n5-INGRESO AUTOS\n6-EGRESO AUTOS\n7-SALIR\n");
+            printf("1-ALTA\n2-MODIFICAR\n3-BAJA\n4-LISTAR PROPIETARIOS\n5-INGRESO AUTOS\n6-EGRESO AUTOS\n7-LISTAR AUTOS\n8-RECAUDACION TOTAL ESTACIONAMIENTO\n9-RECAUDACION TOTAL MARCA\n10-MOSTRAR\n11-SALIR\n");
             scanf("%d",&opcion);
             switch(opcion)
             {
@@ -94,15 +97,32 @@ int main()
                    break;
                 case 6:
                      system("cls");
-                     error6=calcularHorasDeEstadia(automoviles,AUTOS);
-                     if(error6==-1)
-                     {
-                        printf("Ingreso una patente incorrecta.");
-                     }
+                     recaudacionContador=calcularHorasDeEstadia(automoviles,AUTOS,historial,AUTOS);
+                     acumuladorDinero=recaudacionContador+acumuladorDinero;
                      getch();
                      system("cls");
                      break;
                 case 7:
+                    system("cls");
+                    mostrar_automoviles(automoviles,AUTOS);
+                    getch();
+                    system("cls");
+                    break;
+                case 8:
+                    system("cls");
+                    printf("Lo recuadado hasta ahora es: %d",acumuladorDinero);
+                    getch();
+                    system("cls");
+                    break;
+                case 9:
+                    system("cls");
+                    mostrar_historialAutos(historial,AUTOS);
+                    getch();
+                    system("cls");
+                    break;
+                case 10:
+                    mostrarPropietarioYSusAutos(automoviles,AUTOS,propietarios,AUTOS);
+                case 11:
                     break;
                 default:
                     printf("Ingreso una opcion no valida, reingrese\n");
@@ -110,7 +130,7 @@ int main()
                     system("cls");
                     break;
             }
-        }while(opcion!=7);
+        }while(opcion!=11);
     }
     return 0;
 }
