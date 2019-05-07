@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1557242123 source:c:\users\alumno\desktop\damiandiosqueprimerparcial\actores.c
+	"actores.h"
+
+1557243281 source:c:\users\alumno\desktop\damiandiosqueprimerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"actores.h"
+	"peliculas.h"
+
+1557242846 c:\users\alumno\desktop\damiandiosqueprimerparcial\actores.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1557243281 c:\users\alumno\desktop\damiandiosqueprimerparcial\peliculas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1557242901 source:c:\users\alumno\desktop\damiandiosqueprimerparcial\peliculas.c
+	"peliculas.h"
+
+1557242796 source:c:\users\alumno\desktop\damiandiosqueprimerparcial\actores-pelis.c
+
