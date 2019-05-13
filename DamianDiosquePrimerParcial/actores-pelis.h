@@ -1,8 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <conio.h>
 #include "actores.h"
 #include "peliculas.h"
 
-int eMostrar(ePelicula array[],int tam,eActores actores[],int tamAct)
+void eMostrar(ePelicula[],int,eActores[],int,eGenero[],int);
+void eActo_Add_ActoresEnPeliculas(eActores actores[],int tam,ePelicula pelicula[],int);
+int ePeli_modify_Peliculas_act(ePelicula list[],int len,eGenero genero[],int tamGene,eActores actores[],int tamAct);

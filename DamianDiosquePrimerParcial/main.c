@@ -4,7 +4,7 @@
 #include <conio.h>
 #include "actores.h"
 #include "peliculas.h"
-#define PELIS 10
+#define PELIS 50
 #define ACTORES 10
 int main()
 {
@@ -12,8 +12,10 @@ int main()
     ePelicula  peliculas[PELIS];
     eActores actores[ACTORES];
     ePeli_init_Peliculas(peliculas,PELIS);
-    ePeli_Harcodear_Peliculas(peliculas,4);
+    eGenero generos[3];
+    ePeli_Harcodear_Peliculas(peliculas,4,generos,3);
     eActo_Harcodear_Actores(actores,5);
+    harcodearGenero(generos,3);
     int idOpcion;
         do
         {
@@ -26,18 +28,19 @@ int main()
                 case 1:
                     getch();
                     system("cls");
-                    ePeli_add_Peliculas(peliculas,PELIS);
+                    ePeli_add_Peliculas(peliculas,PELIS,generos,3);
+                    eActo_Add_ActoresEnPeliculas(actores,ACTORES,peliculas,PELIS);
                     break;
                 case 2:
                     getch();
                     system("cls");
-                    ePeli_modify_Peliculas(peliculas,PELIS);
+                    ePeli_modify_Peliculas_act(peliculas,PELIS,generos,3,actores,ACTORES);
                     system("cls");
                     break;
                 case 3:
                     system("cls");
                     getch();
-                    ePeli_Mostrar_Peliculas(peliculas,PELIS);
+                    ePeli_Mostrar_Peliculas(peliculas,PELIS,generos,3);
                     printf("Ingrese id de pelicula a eliminar\n");
                     scanf("%d",&idOpcion);
                     ePeli_remove_Peliculas(peliculas,PELIS,idOpcion);
@@ -67,7 +70,11 @@ int main()
                     break;
                 case 6:
                      system("cls");
-                     ePeli_Mostrar_Peliculas(peliculas,PELIS);
+                     ePeli_Mostrar_Peliculas(peliculas,PELIS,generos,3);
+                     break;
+                case 7:
+                    eMostrar(peliculas,PELIS,actores,ACTORES,generos,3);
+                    break;
                 case 10:
                     break;
                 default:
