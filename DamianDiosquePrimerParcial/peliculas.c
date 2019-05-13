@@ -22,13 +22,13 @@ void ePeli_Harcodear_Peliculas(ePelicula peliculas[],int tam,eGenero genero[],in
 {
     int i,j;
 
-    char titulo[][20]= {"Masacre","La Tierra","Muerte","GOT","Masacre Dos","Muerte en la playa"};
-    int dia[]= {20,10,06,05,07,27};
-    int mes[]={06,10,12,03,01,07};
-    int anio[]={1991,2008,2001,1947,2030,2015};
-    int generos[]={1,2,3,1,3,2};
-    int idActor[]= {1,2,3,4,5,6};
-    int idPelicula[]= {100,101,102,103,104,105,106};
+    char titulo[][30]= {"Avengers EndGame","Thor","Cellular","Men in Black 4","IronMan","13 Going on 30","Lucy","Nace una estrella","¿Dime con cuantos?","Guardianes de la Galaxia","A perfect murder","La isla","Que paso ayer","Home Alone 3","DeadPool","Sherlock Holmes","Men in Black 3","Avengers Infinity War","Grandes esperanzas","SWAT","XxX"};
+    int dia[]= {20,10,2,10,5,7,9,8,4,20,6,3,5,6,7,5,2,6,8,20,11};
+    int mes[]={4,6,5,7,9,5,2,3,4,5,8,10,2,10,12,6,5,4,12,2,5};
+    int anio[]={2019,2013,2004,2019,2012,2004,2014,2018,2010,2014,1995,2005,2013,1997,2015,2011,2010,2017,1995,1998,1992};
+    int generos[]={1,1,1,1,1,4,1,4,4,1,3,3,2,2,1,1,1,1,4,1,1};
+    int idActor[]= {2,5,4,5,2,3,1,9,4,9,7,1,9,1,10,2,10,10,7,6,6};
+    int idPelicula[]= {1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020};
 
     for(i=0; i<tam; i++)
     {
@@ -64,25 +64,7 @@ int ePeli_add_Peliculas(ePelicula array[],int tam,eGenero genero[],int tamgene)
         {
             if(array[i].estado==LIBRE)
             {
-                if(array[i].idPelicula<1000)
-                {
-                    do
-                    {
-                    system("cls");
-                    printf("Ingrese id de la pelicula: \n");
-                    scanf("%s",valida);
-                    validacion=validar_Num(valida);
-                    if(validacion==1)
-                    {
-                        array[i].idPelicula=atoi(valida);
-                        break;
-                    }
-                    }while(validacion==0);
-                }
-                else
-                {
-                    ePeli_IdGenerador(array,tam,i);
-                }
+                ePeli_IdGenerador(array,tam,i);
                 system("cls");
                 printf("Ingrese nombre de la pelicula: \n");
                 fflush(stdin);
@@ -197,7 +179,7 @@ void ePeli_IdGenerador(ePelicula lista[],int tam,int posicion)
 {
     int maximo;
     maximo=ePeli_BuscarIdMaximo(lista,tam);
-    maximo=maximo+100;
+    maximo=maximo+1;
     lista[posicion].idPelicula=maximo;
 
 }

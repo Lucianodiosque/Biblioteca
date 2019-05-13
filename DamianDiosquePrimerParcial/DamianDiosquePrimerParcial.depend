@@ -1,72 +1,45 @@
 # depslib dependency file v1.0
-1557242123 source:c:\users\alumno\desktop\damiandiosqueprimerparcial\actores.c
+1557751972 source:c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\actores.c
 	"actores.h"
 
-1557243281 source:c:\users\alumno\desktop\damiandiosqueprimerparcial\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<conio.h>
-	"actores.h"
-	"peliculas.h"
-
-1557242846 c:\users\alumno\desktop\damiandiosqueprimerparcial\actores.h
+1557720712 c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\actores.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 
-1557243281 c:\users\alumno\desktop\damiandiosqueprimerparcial\peliculas.h
+1557754451 source:c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\genero.c
+	"genero.h"
+
+1557720712 c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\genero.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 
-1557242901 source:c:\users\alumno\desktop\damiandiosqueprimerparcial\peliculas.c
-	"peliculas.h"
-
-1557242796 source:c:\users\alumno\desktop\damiandiosqueprimerparcial\actores-pelis.c
-
-1557714246 source:c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\actores.c
-	"actores.h"
-
-1557714246 c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\actores.h
+1557757417 source:c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
-
-1557719774 source:c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<conio.h>
+	<ctype.h>
 	"actores.h"
 	"peliculas.h"
 
-1557720063 c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\peliculas.h
+1557751972 c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\peliculas.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 	"genero.h"
 
-1557720063 source:c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\peliculas.c
+1557754532 source:c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\peliculas.c
 	"peliculas.h"
 
-1557719644 source:c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\actores-pelis.c
+1557757259 source:c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\actores-pelis.c
 	"actores-pelis.h"
 
-1557716859 c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\actores-pelis.h
+1557720712 c:\users\alumno\downloads\biblioteca-master\damiandiosqueprimerparcial\actores-pelis.h
 	"actores.h"
 	"peliculas.h"
-
-1557706835 source:c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\genero.c
-	"genero.h"
-
-1557703802 c:\users\lusho\downloads\biblioteca-master\damiandiosqueprimerparcial\genero.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<conio.h>
 

@@ -7,9 +7,9 @@ void eActo_Harcodear_Actores(eActores actor[],int tam)
 {
     int i;
 
-    int idActor[]={1,2,3,4,5,6};
-    char nombre[][40]={"Scarlett Johansson","Robert  Downey Jr","Mark Ruffalo","Chris Evans","Chris Hemsworth","Samuel Jackson"};
-    char paisOrigen[][20]={"Argentina","EEUU","Canada","EEUU","Argentina","EEUU"};
+    int idActor[]={1,2,3,4,5,6,7,8,9,10};
+    char nombre[][40]={"Scarlett Johansson","Robert  Downey Jr","Mark Ruffalo","Chris Evans","Chris Hemsworth","Samuel Jackson","Gwyneth Paltrow","Paul Rudd","Bradley Cooper","Josh Brolin"};
+    char paisOrigen[][20]={"Argentina","EEUU","Canada","EEUU","Argentina","EEUU","Canada","Argentina","EEUU","Canada"};
 
     for(i=0;i<tam;i++)
     {

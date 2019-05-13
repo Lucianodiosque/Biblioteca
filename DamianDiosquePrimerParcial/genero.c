@@ -5,8 +5,8 @@ void harcodearGenero(eGenero genero[],int tam)
 {
     int i;
 
-    int idGenero[]={1,2,3};
-    char nombre[][40]={"terror","comedia","fantasia"};
+    int idGenero[]={1,2,3,4,5};
+    char nombre[][40]={"Accion","Comedia","Drama","Romance","Terror"};
 
     for(i=0;i<tam;i++)
     {

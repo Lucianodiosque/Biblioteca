@@ -4,6 +4,7 @@
 void eMostrar(ePelicula lista[],int tam,eActores act[],int tamAct,eGenero genero[],int tamgen)
 {
     int i,j,k;
+    printf("ID\t               TITULO\t      FECHA\t     ACTOR\t  GENERO\n");
     for(i=0;i<tam;i++)
     {
       if(lista[i].estado==OCUPADO)
@@ -16,7 +17,7 @@ void eMostrar(ePelicula lista[],int tam,eActores act[],int tamAct,eGenero genero
                 {
                     if(lista[i].genero==genero[j].idPelicula)
                     {
-                         printf("%s--%d/%d/%d--%s--%s\n",lista[i].titulo,lista[i].fechaDeEstreno.dia,lista[i].fechaDeEstreno.mes,lista[i].fechaDeEstreno.anio,act[k].nombre,genero[j].descripcion);
+                         printf("%2d %25s %5d/%2d/%3d %20s %4s\n",lista[i].idPelicula,lista[i].titulo,lista[i].fechaDeEstreno.dia,lista[i].fechaDeEstreno.mes,lista[i].fechaDeEstreno.anio,act[k].nombre,genero[j].descripcion);
 
                     }
 
@@ -173,3 +174,108 @@ int ePeli_modify_Peliculas_act(ePelicula list[],int len,eGenero genero[],int tam
     }
     return error;
 }
+void peliculas_De_Eeuu(ePelicula lista[],int tam,eActores actores[],int tamAct,eGenero genero[],int tamGen)
+{
+    int i,j,k;
+    printf("ID\t               TITULO\t      FECHA\t     ACTOR\t  GENERO\n");
+    for(i=0;i<tam;i++)
+    {
+      if(lista[i].estado==OCUPADO)
+      {
+        for(k=0;k<tamAct;k++)
+        {
+           if(lista[i].idActor==actores[k].idActor)
+           {
+                for(j=0;j<tamGen;j++)
+                {
+                    if(lista[i].genero==genero[j].idPelicula)
+                    {
+                        if(strcmp(actores[k].paisOrigen,"EEUU")==0)
+                        {
+                            printf("%2d %25s %5d/%2d/%3d %20s %4s\n",lista[i].idPelicula,lista[i].titulo,lista[i].fechaDeEstreno.dia,lista[i].fechaDeEstreno.mes,lista[i].fechaDeEstreno.anio,actores[k].nombre,genero[j].descripcion);
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+
+      }
+    }
+}
+
+void Peliculas_De_Genero(ePelicula pelicula[],int tamPeli,eGenero genero[],int tamGene)
+{
+    int i,j;
+    for(i=0;i<tamGene;i++)
+    {
+        printf("%s:\n",genero[i].descripcion);
+        for(j=0;j<tamPeli;j++)
+        {
+            if(pelicula[j].genero==genero[i].idPelicula&&pelicula[j].estado==OCUPADO)
+            {
+                printf("%20s\n",pelicula[j].titulo);
+            }
+        }
+    }
+}
+void contarPeliculas(ePelicula peliculas[],int tam,eGenero genero[],int  tamGene)
+{
+    int i,j;
+    int contadorPelis;
+    for(i=0;i<tamGene;i++)
+    {
+        printf("%s\n",genero[i].descripcion);
+        contadorPelis=0;
+        for(j=0;j<tam;j++)
+        {
+            if(peliculas[j].genero==genero[i].idPelicula&&peliculas[j].estado==OCUPADO)
+            {
+                contadorPelis++;
+            }
+        }
+        printf("La cantidad de Peliculas es :%d\n",contadorPelis);
+    }
+}
+/*
+int generos_Menor_peliculas(ePelicula peliculas[], int tam,eGenero genero[],int tamGene)
+ {
+     int i,j;
+     int minimo=0;
+     int contador;
+     int contadores[5];
+     for(i=0;i<tamGene;i++)
+     {
+        contador=0;
+        flag=0;
+        for(j=0;j<tam;j++)
+        {
+            if(peliculas[j].estado==OCUPADO)
+            {
+                if(peliculas[j].genero==genero[i].idPelicula)
+                {
+
+                    contador++;
+                }
+            }
+        }
+        flag=1;
+        if(flag=1)
+        {
+          contadores[i]=contador;
+        }
+        if(contadores[i]<minimo)
+        {
+            minimo=contadores[i];
+        }
+     }
+    return minimo;
+}
+void imprimirMinimo(ePelicula peliculas[], int tam,eGenero genero[],int tamGene)
+{
+    int minimo;
+    int i;
+    for()
+}*/
